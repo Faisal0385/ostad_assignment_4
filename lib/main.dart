@@ -37,17 +37,28 @@ class _CounterAppState extends State<CounterApp> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Ostad - CounterApp"),
+          title: const Text("Ostad Assignment - CounterApp", style: TextStyle(
+            color: Colors.white
+        ),),
+          backgroundColor: Colors.deepOrangeAccent,
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              child: Text("Counter Value:\n ${initialValue}", style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),),
+              child: Column(
+                children: [
+                  const Text(
+                    "Counter Value:",
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    initialValue.toString(),
+                    style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              )
             ),
             // Both buttons should be in a Row and have different sizes (responsive).
             Padding(
@@ -60,6 +71,9 @@ class _CounterAppState extends State<CounterApp> {
                   Expanded(
                     flex: 2,
                     child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.green)
+                      ),
                       onPressed: () {
                         initialValue++;
 
@@ -98,16 +112,19 @@ class _CounterAppState extends State<CounterApp> {
 
                         setState(() {});
                       },
-                      child: Icon(Icons.add),
+                      child: Icon(Icons.add, color: Colors.white,),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   // Press the "Decrement" button to decrease the counter value by 1.
                   Flexible(
                     flex: 1,
                     child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(Colors.red)
+                      ),
                       onPressed: () {
                         initialValue--;
                         if (initialValue == 5) {
@@ -133,7 +150,7 @@ class _CounterAppState extends State<CounterApp> {
                         }
                         setState(() {});
                       },
-                      child: Icon(Icons.remove),
+                      child: Icon(Icons.remove, color: Colors.white,),
                     ),
                   ),
                 ],

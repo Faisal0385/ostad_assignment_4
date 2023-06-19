@@ -6,7 +6,10 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Ostad Assignment - CounterApp"),
+        title: Text("Ostad Assignment - CounterApp", style: TextStyle(
+          color: Colors.white
+        ),),
+        backgroundColor: Colors.deepOrangeAccent,
       ),
       body: Center(
         child: Container(
