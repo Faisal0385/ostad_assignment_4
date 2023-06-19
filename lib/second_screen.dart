@@ -6,16 +6,14 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Ostad Assignment - CounterApp", style: TextStyle(
+        title: const Text("Ostad Assignment - CounterApp", style: TextStyle(
           color: Colors.white
         ),),
         backgroundColor: Colors.deepOrangeAccent,
       ),
       body: Center(
-        child: Container(
-          child: Text("Congratulations! You reached 10!",
-            style: TextStyle(fontSize: 24),),
-        ),
+        child: const Text("Congratulations! You reached 10!",
+          style: TextStyle(fontSize: 24),),
       ),
     );
   }
